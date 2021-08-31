@@ -60,9 +60,15 @@ const Widgets = React.lazy(() => import("./views/widgets/Widgets"));
 const Users = React.lazy(() => import("./views/users/Users"));
 const User = React.lazy(() => import("./views/users/User"));
 const AllProducts = React.lazy(() => import("./views/products/AllProducts"));
-const AddNewProducts = React.lazy(() =>
-  import("./views/products/AddNewProducts")
-);
+const AddNewProducts = React.lazy(() =>import("./views/products/AddNewProducts"));
+const EditProfile = React.lazy(() => import("./views/my-accounts/EditProfile"))
+const TermsCondition = React.lazy(() => import("./views/setting1/TermsCondition"))
+const PrivacyPolicy = React.lazy(() => import("./views/setting1/PrivacyPolicy"))
+const AppVersion = React.lazy(() => import("./views/setting1/AppVersion"))
+const DataUser = React.lazy(() => import("./views/user-management/LogUser"))
+const LogUser = React.lazy(() => import("./views/user-management/DataUser"))
+const AddAdmin = React.lazy(() => import("./views/admin-management/AddAdmin"))
+const AddRole = React.lazy(() => import("./views/admin-management/AddRole"))
 
 const routes = [
   { path: "/", exact: true, name: "Home" },
@@ -134,6 +140,58 @@ const routes = [
     name: "Add New Products",
     component: AddNewProducts,
   },
+
+
+  { path: "/myaccount", name: "My Account", component: EditProfile, exact: true },
+  {
+    path: "/myaccount/editprofile",
+    name: "Edit Profile",
+    component: EditProfile,
+  },
+
+  { path: "/setting", name: "Setting", component: TermsCondition, exact: true },
+  {
+    path: "/setting/terms-condition",
+    name: "Terms and Condition",
+    component: TermsCondition,
+  },
+  {
+    path: "/setting/privacy-policy",
+    name: "Privacy Policy",
+    component: PrivacyPolicy,
+  },
+  {
+    path: "/setting/app-version",
+    name: "App Version",
+    component: AppVersion,
+  },
+
+  { path: "/user-management", name: "User Management", component: LogUser, exact: true },
+  {
+    path: "/user-management/log-user",
+    name: "Log User",
+    component: LogUser,
+  },
+  {
+    path: "/user-management/data-user",
+    name: "Data User",
+    component: DataUser,
+  },
+
+  { path: "/admin", name: "Admin Management", component: AddAdmin, exact: true },
+  {
+    path: "/admin/add-admin",
+    name: "Add Admin",
+    component: AddAdmin,
+  },
+  {
+    path: "/admin/add-role",
+    name: "Add Role",
+    component: AddRole,
+  },
+ 
+
+
 ];
 
 export default routes;
